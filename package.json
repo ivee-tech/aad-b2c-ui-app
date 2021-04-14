@@ -1,0 +1,42 @@
+{
+  "name": "quickstart-ui-app",
+  "version": "1.0.0",
+  "description": "A starter kit for building a simple UI app.",
+  "main": "dist/index.html",
+  "repository": {
+    "url": "",
+    "type": "git"
+  },
+  "author": "Dan Radu",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "test": "test",
+    "cleanup": "cross-env rm -rf .cache dist",
+    "start": "parcel index.html",
+    "build-only": "cross-env parcel build index.html",
+    "copy-web": "cpx ./web.config ./dist",
+    "copy-assets": "cpx ./assets/** ./dist/assets",
+    "copy": "cross-env copyfiles ./web.config ./assets ./dist",
+    "build": "npm run build-only && npm run copy"
+  },
+  "devDependencies": {
+    "@types/node": "8.0.14",
+    "copyfiles": "^2.1.0",
+    "cpx": "^1.5.0",
+    "cross-env": "^5.2.0",
+    "cssnano": "^4.1.10",
+    "parcel": "^2.0.0-beta.2",
+    "requirejs": "^2.3.2",
+    "rm": "^0.1.8",
+    "text": "github:requirejs/text#latest",
+    "ts-node": "3.2.0",
+    "typescript": "2.4.1"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^2.2.0"
+  }
+}

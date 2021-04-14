@@ -1,0 +1,23 @@
+﻿<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />
+        <script src="./app.ts"></script>
+        <style>
+        </style>
+    </head>
+<body>
+    <div id="appDiv">
+        <div id="accountNameDiv"></div>
+        <hr/>
+        <div id="claimsDiv"></div>
+    </div>
+    <script>
+var app;
+window.addEventListener('load', run);
+function run() {
+    app = window.getApp();
+    app.init();
+}
+</script>	
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "aud": "96f45d40-5a6f-4b0e-8220-738306600067",
+    "email": "xxx@gmail.com",
+    "exp": 1618311698,
+    "givenName": "Eugene",
+    "iss": "https://mifort1.b2clogin.com/93598c13-37b0-4638-b731-ba77957d98ce/v2.0/",
+    "name": "unknown",
+    "nbf": 1618308098,
+    "signInNames.phoneNumber": "+1111111",
+    "sub": "20c3a4b9-1da3-4c51-93ea-07994f4524a2",
+    "surname": "M"
+}

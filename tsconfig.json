@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "lib": ["es5", "es6", "dom"],
+      "module": "commonjs",
+      "target": "es5",
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "sourceMap": true,
+      "outDir": "dist",
+      "removeComments": false,
+      "typeRoots": [
+        "node_modules/@types", "custom_typings"
+      ],
+      "allowJs": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true
+    },
+    "files": [
+      "./app.ts"
+    ],
+    "exclude": [
+      "node_modules", ".vscode", "dist"
+    ]
+  }
