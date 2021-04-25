@@ -1,11 +1,11 @@
 {
     "auth": {
         "clientId": "your_app_id",
-        "authority": "https://your_tenant.b2clogin.com/your_tenant.onmicrosoft.com/B2C_1A_signup_signin",
+        "authority": "https://<your-tenant>.b2clogin.com/<your-tenant>.onmicrosoft.com/B2C_1A_signup_signin_dob",
         "redirectUri": "http://localhost:1234",
         "cacheLocation": "localStorage",
         "apiConfig": {
-            "scopesUrl": "https://your_tenant.onmicrosoft.com/app-001-api",
+            "scopesUrl": "https://<your-tenant>.onmicrosoft.com/app-001-api",
             "scopes": "App.Read,App.Write,App.Delete"
         }
     }

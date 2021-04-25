@@ -90,7 +90,7 @@ export class AuthService {
         };
 
         this.profileRequest = {
-            scopes: ["User.Read"]
+            scopes: ["https://<your-tenant>.b2clogin.com/<your-tenant>.onmicrosoft.com/B2C_1A_signup_signin_dob/User.Read"]
         };
 
         this.profileRedirectRequest = {
@@ -109,7 +109,7 @@ export class AuthService {
         };
 
         this.silentProfileRequest = {
-            scopes: ["openid", "profile", "User.Read"],
+            scopes: ["openid", "profile", "https://<your-tenant>.b2clogin.com/<your-tenant>.onmicrosoft.com/B2C_1A_ProfileEdit_dob/User.Read"],
             account: null as any,
             forceRefresh: false
         };
@@ -293,7 +293,6 @@ export class AuthService {
     
     public runWithToken(callback: Function) {
         let account = this.storeSvc.getAuthAccount(this.config.auth.cacheLocation);
-        debugger;
         let key = this.getAccesssTokenStorageKey(account);
         let value = this.storeSvc.getValue(key, this.config.auth.cacheLocation);
         let accessTokenObj = JSON.parse(value);
@@ -317,6 +316,16 @@ export class AuthService {
         if(!payload) return {};
         let claims = JSON.parse(atob(payload));
         return claims;
+    }
+
+    editProfile(signInType: string, onSuccessfulEditProfile?: Function): void {
+        if (signInType === "loginPopup") {
+            this.myMSALObj.loginPopup({ authority: "https://<your-tenant>.b2clogin.com/<your-tenant>.onmicrosoft.com/B2C_1A_ProfileEdit_dob" }).then((resp: AuthenticationResult) => {
+                this.handleResponse(resp, onSuccessfulEditProfile);
+            }).catch(console.error);
+        } else if (signInType === "loginRedirect") {
+            this.myMSALObj.loginRedirect(this.profileRedirectRequest);
+        }
     }
 
 
